@@ -4,7 +4,11 @@ public:
         if(i == a.size() || j == b.size()){
             return 0;
         }
-       
+
+        if(dp[i][j] != -1){
+            return dp[i][j];
+        }
+
         if(a[i] == b[j]){
             return dp[i][j] = 1 + solve(a,b,i+1,j+1,dp);
         }
